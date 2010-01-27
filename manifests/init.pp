@@ -48,13 +48,14 @@ class smartmontools {
     owner   => root,
     group   => root,
     mode    => 0644,
-    notify  => Service["smartd"],
+    notify  => Service["smartmontools"],
     source  => "puppet://$server/modules/smartmontools/default/smartmontools",
   }
 
-  service { "smartd":
+  service { "smartmontools":
     enable     => true,
     hasrestart => true,
+    pattern    => "/usr/sbin/smartd",
     ensure     => running,
     require    => [ File["/etc/default/smartmontools"], Package["smartmontools"] ],
   }
