@@ -1,4 +1,4 @@
-Defaults for smartmontools initscript (/etc/init.d/smartmontools)
+#Defaults for smartmontools initscript (/etc/init.d/smartmontools)
 # This is a POSIX shell fragment
 
 # List of devices you want to explicitly enable S.M.A.R.T. for
