@@ -48,8 +48,9 @@ class smartmontools {
     owner   => root,
     group   => root,
     mode    => 0644,
-    notify  => Service["smartmontools"],
+    notify  => Service['smartmontools'],
     source  => "puppet://$server/modules/smartmontools/default/smartmontools",
+    require => Package['smartmontools'],
   }
 
   service { "smartmontools":
